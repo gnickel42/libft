@@ -37,5 +37,5 @@ fclean: clean
 
 re: fclean all
 
-#bonus: $(OBJ_BONUS)
-#	ar -rcs $(NAME) $(OBJ_BONUS)
+bonus: $(OBJ_BONUS)
+	ar -rcs $(NAME) $(OBJ_BONUS)
