@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:52:41 by gnickel           #+#    #+#             */
-/*   Updated: 2024/10/14 13:52:41 by gnickel          ###   ########.fr       */
+/*   Created: 2024/10/16 10:36:05 by gnickel           #+#    #+#             */
+/*   Updated: 2024/10/16 10:36:05 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*dst;
-	size_t	i;
-	size_t	i_set;
+	size_t	start;
+	size_t	end;
 
-	i = 0;
-	i_set = 0;
-	while (dst)
-		while (set)
-		{
-			while (s1[i] == set[i_set])
-				i++;
-			i_set++;
-		}
+	start = 0;
+	end = ft_strlen(s1);
+	if (s1 || set)
+	{
+		while (ft_strchr(set, s1[start]) && s1[start])
+			start++;
+		while (ft_strrchr(set, s1[end]) && end > 0)
+			end--;
+		end++;
+		return (ft_substr(s1, start, end - start));
+	}
+	return (NULL);
 }
