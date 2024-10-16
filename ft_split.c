@@ -39,6 +39,7 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
+
 	if (dechar == 1) {
 		dst = (char **)malloc(2 * sizeof(char *)); // Allocate space for 2 elements
 		if (!dst)
